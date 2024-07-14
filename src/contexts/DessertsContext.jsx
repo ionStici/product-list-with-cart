@@ -32,10 +32,6 @@ export default function DessertsProvider({ children }) {
     });
   };
 
-  const dessertsInCart = () => {
-    return desserts.filter((dessert) => dessert.cart > 0);
-  };
-
   const removeDessertFromCart = (name) => {
     setDessets((prev) => {
       return prev.map((dessert) => {
@@ -49,14 +45,18 @@ export default function DessertsProvider({ children }) {
     });
   };
 
+  const getDessertsCart = () => {
+    return desserts.filter((dessert) => dessert.cart > 0);
+  };
+
   return (
     <DessertsContext.Provider
       value={{
         desserts,
         increment,
         decrement,
-        dessertsInCart,
         removeDessertFromCart,
+        getDessertsCart,
       }}
     >
       {children}

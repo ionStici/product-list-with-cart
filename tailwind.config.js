@@ -8,7 +8,6 @@ export default {
       },
     },
     colors: {
-      inherit: "inherit",
       white: "#fff",
       red: "hsl(14, 86%, 42%)",
       red_dark: "rgba(199, 58, 15, 0.75)",
@@ -19,6 +18,12 @@ export default {
       rose_400: "hsl(7, 20%, 60%)",
       rose_500: "hsl(12, 20%, 44%)",
       rose_900: "hsl(14, 65%, 9%)",
+      inherit: "inherit",
+      transparent: "transparent",
+    },
+    screens: {
+      md: "768px",
+      lg: "1052px",
     },
   },
   plugins: [],

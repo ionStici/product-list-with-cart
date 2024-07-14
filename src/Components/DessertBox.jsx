@@ -8,16 +8,20 @@ export default function DessertBox({ dessert }) {
   const { increment, decrement } = useDesserts();
 
   const match768 = useMediaQuery("min-width", "768px");
-  const match1100 = useMediaQuery("min-width", "850px");
+  const match1052 = useMediaQuery("min-width", "1052px");
 
   let src = image.mobile;
   if (match768) src = image.tablet;
-  if (match1100) src = image.desktop;
+  if (match1052) src = image.desktop;
 
   return (
     <div className="mb-6 md:mb-0">
       <div className="relative mb-[38px] max-h-60">
         <img src={src} alt={name} className="max-h-60 w-full rounded-lg" />
+
+        {cart > 0 && (
+          <div className="absolute left-0 top-0 size-full rounded-lg border-2 border-red" />
+        )}
 
         <div className="absolute bottom-[-22px] left-[50%] h-[44px] w-[160px] translate-x-[-50%]">
           {cart === 0 && (

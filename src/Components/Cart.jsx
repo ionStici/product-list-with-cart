@@ -3,8 +3,8 @@ import { ReactSVG } from "react-svg";
 import { useDesserts } from "../contexts/DessertsContext";
 
 export default function Cart() {
-  const { dessertsInCart } = useDesserts();
-  const desserts = dessertsInCart();
+  const { getDessertsCart } = useDesserts();
+  const desserts = getDessertsCart();
 
   const totalInCart = desserts.reduce((acc, dessert) => {
     return acc + dessert.cart;
@@ -15,7 +15,7 @@ export default function Cart() {
   }, 0);
 
   return (
-    <div className="mt-[32px] rounded-[12px] bg-white p-[24px]">
+    <div className="mt-[32px] rounded-[12px] bg-white p-[24px] lg:mt-0 lg:self-start">
       <h1 className="mb-[24px] text-2xl font-bold text-red">
         Your Cart ({totalInCart})
       </h1>
