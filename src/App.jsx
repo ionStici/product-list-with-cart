@@ -1,4 +1,5 @@
-import Box from "./Components/Box";
+import Dessert from "./Components/Dessert";
+import Cart from "./Components/Cart";
 import { useDesserts } from "./contexts/DessertsContext";
 
 export default function App() {
@@ -9,10 +10,12 @@ export default function App() {
       <h1 className="mb-8 text-4xl font-bold text-rose_900">Desserts</h1>
 
       <div className="md:grid md:grid-cols-3 md:gap-x-[24px] md:gap-y-[32px]">
-        {desserts.map((dessert, i) => {
-          return <Box key={i} dessert={dessert} />;
-        })}
+        {desserts.map((dessert, i) => (
+          <Dessert key={i} dessert={dessert} />
+        ))}
       </div>
+
+      <Cart />
     </main>
   );
 }

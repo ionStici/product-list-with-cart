@@ -32,8 +32,33 @@ export default function DessertsProvider({ children }) {
     });
   };
 
+  const dessertsInCart = () => {
+    return desserts.filter((dessert) => dessert.cart > 0);
+  };
+
+  const removeDessertFromCart = (name) => {
+    setDessets((prev) => {
+      return prev.map((dessert) => {
+        return dessert.name === name
+          ? {
+              ...dessert,
+              cart: 0,
+            }
+          : dessert;
+      });
+    });
+  };
+
   return (
-    <DessertsContext.Provider value={{ desserts, increment, decrement }}>
+    <DessertsContext.Provider
+      value={{
+        desserts,
+        increment,
+        decrement,
+        dessertsInCart,
+        removeDessertFromCart,
+      }}
+    >
       {children}
     </DessertsContext.Provider>
   );

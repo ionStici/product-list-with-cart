@@ -3,7 +3,7 @@ import { useMediaQuery } from "../hooks/useMediaQuery";
 import { ReactSVG } from "react-svg";
 import { LuPlusCircle, LuMinusCircle } from "react-icons/lu";
 
-export default function Box({ dessert }) {
+export default function Dessert({ dessert }) {
   const { image, name, category, price, cart } = dessert;
   const { increment, decrement } = useDesserts();
 
