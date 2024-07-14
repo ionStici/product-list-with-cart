@@ -11,6 +11,7 @@ export default {
       inherit: "inherit",
       white: "#fff",
       red: "hsl(14, 86%, 42%)",
+      red_dark: "rgba(199, 58, 15, 0.75)",
       green: "hsl(159, 69%, 38%)",
       rose_50: "hsl(20, 50%, 98%)",
       rose_100: "hsl(13, 31%, 94%)",

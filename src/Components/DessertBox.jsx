@@ -3,12 +3,12 @@ import { useMediaQuery } from "../hooks/useMediaQuery";
 import { ReactSVG } from "react-svg";
 import { LuPlusCircle, LuMinusCircle } from "react-icons/lu";
 
-export default function Dessert({ dessert }) {
+export default function DessertBox({ dessert }) {
   const { image, name, category, price, cart } = dessert;
   const { increment, decrement } = useDesserts();
 
   const match768 = useMediaQuery("min-width", "768px");
-  const match1100 = useMediaQuery("min-width", "1100px");
+  const match1100 = useMediaQuery("min-width", "850px");
 
   let src = image.mobile;
   if (match768) src = image.tablet;
