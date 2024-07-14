@@ -1,14 +1,18 @@
-import Box from "./Box";
-import { data } from "./data";
+import Box from "./Components/Box";
+import { useDesserts } from "./contexts/DessertsContext";
 
 export default function App() {
-  return (
-    <main className="p-6">
-      <h1 className="text-rose_900 pb-8 text-4xl font-bold">Desserts</h1>
+  const { desserts } = useDesserts();
 
-      {data.map((dessert, i) => {
-        return <Box key={i} dessert={dessert} />;
-      })}
+  return (
+    <main className="mx-auto max-w-[500px] p-6 md:max-w-[880px] md:p-10">
+      <h1 className="mb-8 text-4xl font-bold text-rose_900">Desserts</h1>
+
+      <div className="md:grid md:grid-cols-3 md:gap-x-[24px] md:gap-y-[32px]">
+        {desserts.map((dessert, i) => {
+          return <Box key={i} dessert={dessert} />;
+        })}
+      </div>
     </main>
   );
 }

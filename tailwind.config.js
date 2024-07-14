@@ -2,7 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Red Hat Text", "sans-serif"],
+      },
+    },
     colors: {
       inherit: "inherit",
       white: "#fff",

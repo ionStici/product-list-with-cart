@@ -1,4 +1,49 @@
-export const data = [
+import { createContext, useContext, useState } from "react";
+
+const DessertsContext = createContext();
+
+export default function DessertsProvider({ children }) {
+  const [desserts, setDessets] = useState(data);
+
+  const increment = (name) => {
+    setDessets((prev) => {
+      return prev.map((dessert) => {
+        return dessert?.name === name
+          ? {
+              ...dessert,
+              cart: dessert.cart + 1,
+            }
+          : dessert;
+      });
+    });
+  };
+
+  const decrement = (name) => {
+    setDessets((prev) => {
+      return prev.map((dessert) => {
+        if (dessert.cart === 0) return dessert;
+        return dessert?.name === name
+          ? {
+              ...dessert,
+              cart: dessert.cart - 1,
+            }
+          : dessert;
+      });
+    });
+  };
+
+  return (
+    <DessertsContext.Provider value={{ desserts, increment, decrement }}>
+      {children}
+    </DessertsContext.Provider>
+  );
+}
+
+export function useDesserts() {
+  return useContext(DessertsContext);
+}
+
+const data = [
   {
     image: {
       thumbnail: "images/image-waffle-thumbnail.jpg",
@@ -9,6 +54,7 @@ export const data = [
     name: "Waffle with Berries",
     category: "Waffle",
     price: 6.5,
+    cart: 0,
   },
   {
     image: {
@@ -20,6 +66,7 @@ export const data = [
     name: "Vanilla Bean Crème Brûlée",
     category: "Crème Brûlée",
     price: 7.0,
+    cart: 0,
   },
   {
     image: {
@@ -31,6 +78,7 @@ export const data = [
     name: "Macaron Mix of Five",
     category: "Macaron",
     price: 8.0,
+    cart: 0,
   },
   {
     image: {
@@ -42,6 +90,7 @@ export const data = [
     name: "Classic Tiramisu",
     category: "Tiramisu",
     price: 5.5,
+    cart: 0,
   },
   {
     image: {
@@ -53,6 +102,7 @@ export const data = [
     name: "Pistachio Baklava",
     category: "Baklava",
     price: 4.0,
+    cart: 0,
   },
   {
     image: {
@@ -64,6 +114,7 @@ export const data = [
     name: "Lemon Meringue Pie",
     category: "Pie",
     price: 5.0,
+    cart: 0,
   },
   {
     image: {
@@ -75,6 +126,7 @@ export const data = [
     name: "Red Velvet Cake",
     category: "Cake",
     price: 4.5,
+    cart: 0,
   },
   {
     image: {
@@ -86,6 +138,7 @@ export const data = [
     name: "Salted Caramel Brownie",
     category: "Brownie",
     price: 4.5,
+    cart: 0,
   },
   {
     image: {
@@ -97,5 +150,6 @@ export const data = [
     name: "Vanilla Panna Cotta",
     category: "Panna Cotta",
     price: 6.5,
+    cart: 0,
   },
 ];
