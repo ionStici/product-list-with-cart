@@ -32,8 +32,9 @@ export default function OrderModal({ setCartIsOpen }) {
     <div
       onClick={handleCloseModal}
       data-type="outside"
-      className="hide-scrollbar fixed inset-0 h-dvh place-content-center overflow-scroll bg-rose_900/50 py-[95px] backdrop-blur-sm md:p-[95px]"
+      className="hide-scrollbar fixed inset-0 h-dvh place-content-center overflow-scroll bg-rose_900/50 backdrop-blur-sm md:px-[95px]"
     >
+      <div aria-hidden="true" className="h-[95px] w-full" />
       <div className="mx-auto max-w-[450px] rounded-[12px] bg-white px-6 pb-6 pt-10 md:max-w-[688px] md:p-10 lg:max-w-[592px]">
         <ReactSVG className="pb-6" src="images/icon-order-confirmed.svg" />
 
@@ -59,6 +60,7 @@ export default function OrderModal({ setCartIsOpen }) {
 
         <Button onClick={handleNewOrder}>Start New Order</Button>
       </div>
+      <div aria-hidden="true" className="h-[95px] w-full" />
     </div>,
     document.body,
   );
