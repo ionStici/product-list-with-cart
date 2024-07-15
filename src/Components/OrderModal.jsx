@@ -4,8 +4,8 @@ import { createPortal } from "react-dom";
 import { ReactSVG } from "react-svg";
 import Button from "../ui/Button";
 
-export default function OrderModal() {
-  const { getDessertsCart } = useDesserts();
+export default function OrderModal({ setCartIsOpen }) {
+  const { getDessertsCart, clearCart } = useDesserts({ setCartIsOpen });
   const desserts = getDessertsCart();
 
   useEffect(() => {
@@ -13,9 +13,23 @@ export default function OrderModal() {
     return () => document.documentElement.classList.remove("no-scroll");
   }, []);
 
+  const handleCloseModal = ({ target }) => {
+    if (target.dataset.type !== "outside") return;
+    setCartIsOpen(false);
+  };
+
+  const handleNewOrder = () => {
+    setCartIsOpen(false);
+    clearCart();
+  };
+
   return createPortal(
-    <div className="hide-scrollbar fixed inset-0 h-full overflow-scroll bg-rose_900/50 pt-[95px] backdrop-blur-sm md:flex md:items-center md:justify-center md:py-[95px]">
-      <div className="mx-auto max-w-[688px] grow rounded-t-[12px] bg-white px-6 pb-6 pt-10 md:rounded-[12px] md:p-10 lg:max-w-[592px]">
+    <div
+      onClick={handleCloseModal}
+      data-type="outside"
+      className="hide-scrollbar fixed inset-0 h-dvh place-content-center overflow-scroll bg-rose_900/50 py-[95px] backdrop-blur-sm"
+    >
+      <div className="mx-auto max-w-[450px] rounded-[12px] bg-white px-6 pb-6 pt-10 md:max-w-[688px] md:p-10 lg:max-w-[592px]">
         <ReactSVG className="pb-6" src="images/icon-order-confirmed.svg" />
 
         <h2 className="pb-2 text-4xl font-bold leading-[45px]">
@@ -63,7 +77,7 @@ export default function OrderModal() {
           </p>
         </div>
 
-        <Button>Start New Order</Button>
+        <Button onClick={handleNewOrder}>Start New Order</Button>
       </div>
     </div>,
     document.body,

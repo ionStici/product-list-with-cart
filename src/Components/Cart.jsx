@@ -58,7 +58,7 @@ export default function Cart() {
 
           <Button onClick={() => setCartIsOpen(true)}>Confirm Order</Button>
 
-          {cartIsOpen && <OrderModal />}
+          {cartIsOpen && <OrderModal setCartIsOpen={setCartIsOpen} />}
         </>
       )}
     </div>
