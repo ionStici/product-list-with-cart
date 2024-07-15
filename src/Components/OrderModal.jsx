@@ -14,8 +14,8 @@ export default function OrderModal() {
   }, []);
 
   return createPortal(
-    <div className="fixed inset-0 h-full overflow-scroll bg-rose_900/50 pt-[95px] backdrop-blur-sm">
-      <div className="rounded-t-[12px] bg-white px-6 pb-6 pt-10">
+    <div className="hide-scrollbar fixed inset-0 h-full overflow-scroll bg-rose_900/50 pt-[95px] backdrop-blur-sm md:flex md:items-center md:justify-center md:py-[95px]">
+      <div className="mx-auto max-w-[688px] grow rounded-t-[12px] bg-white px-6 pb-6 pt-10 md:rounded-[12px] md:p-10 lg:max-w-[592px]">
         <ReactSVG className="pb-6" src="images/icon-order-confirmed.svg" />
 
         <h2 className="pb-2 text-4xl font-bold leading-[45px]">
@@ -41,8 +41,8 @@ export default function OrderModal() {
                     />
                   </div>
 
-                  <div className="mr-4">
-                    <p className="mb-2">{name}</p>
+                  <div className="mr-4 min-w-0">
+                    <p className="mb-2 truncate">{name}</p>
                     <p className="space-x-2">
                       <span className="text-red">{cart}x</span>
                       <span className="font-normal text-rose_500">

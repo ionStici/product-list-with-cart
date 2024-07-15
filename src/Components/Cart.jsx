@@ -6,7 +6,7 @@ import { useState } from "react";
 import { ReactSVG } from "react-svg";
 
 export default function Cart() {
-  const [cartIsOpen, setCartIsOpen] = useState(true);
+  const [cartIsOpen, setCartIsOpen] = useState(false);
 
   const { getDessertsCart } = useDesserts();
   const desserts = getDessertsCart();
