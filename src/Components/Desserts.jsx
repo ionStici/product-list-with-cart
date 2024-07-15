@@ -6,8 +6,8 @@ export default function Desserts() {
 
   return (
     <div>
-      <h1 className="mb-[32px] text-4xl font-bold text-rose_900">Desserts</h1>
-      <div className="md:grid md:grid-cols-3 md:gap-x-[24px] md:gap-y-[32px]">
+      <h1 className="mb-8 text-4xl font-bold text-rose_900">Desserts</h1>
+      <div className="md:grid md:grid-cols-3 md:gap-x-6 md:gap-y-8">
         {desserts.map((dessert, i) => (
           <DessertBox key={i} dessert={dessert} />
         ))}

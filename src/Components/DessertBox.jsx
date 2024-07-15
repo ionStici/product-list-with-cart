@@ -17,17 +17,21 @@ export default function DessertBox({ dessert }) {
   return (
     <div className="mb-6 md:mb-0">
       <div className="relative mb-[38px] max-h-60">
-        <img src={src} alt={name} className="max-h-60 w-full rounded-lg" />
+        <img
+          src={src}
+          alt={name}
+          className="max-h-60 w-full rounded-lg object-cover"
+        />
 
         {cart > 0 && (
-          <div className="absolute left-0 top-0 size-full rounded-lg border-2 border-red" />
+          <div className="pointer-events-none absolute inset-0 size-full rounded-lg border-2 border-red" />
         )}
 
         <div className="absolute bottom-[-22px] left-[50%] h-[44px] w-[160px] translate-x-[-50%]">
           {cart === 0 && (
             <button
               onClick={() => increment(name)}
-              className="flex size-full items-center justify-center space-x-2 rounded-full border border-rose_400 bg-white text-sm font-semibold text-rose_900 transition-colors hover:text-red"
+              className="flex size-full items-center justify-center space-x-2 rounded-full border border-rose_400 bg-white text-sm font-semibold text-rose_900 transition-colors duration-300 hover:text-red"
             >
               <ReactSVG src="images/icon-add-to-cart.svg" />
               <span>Add to Cart</span>
@@ -35,21 +39,21 @@ export default function DessertBox({ dessert }) {
           )}
 
           {cart > 0 && (
-            <div className="text-md flex size-full items-center justify-between rounded-full bg-red font-semibold text-white">
+            <div className="flex size-full items-center justify-between rounded-full bg-red font-semibold text-white">
               <button
                 onClick={() => decrement(name)}
                 aria-label="Remove from Cart"
-                className="group flex h-full items-center justify-center px-[12px]"
+                className="group flex h-full items-center justify-center px-3"
               >
-                <LuMinusCircle className="h-[20px] w-[20px] transition-colors group-hover:fill-white group-hover:stroke-red" />
+                <LuMinusCircle className="h-5 w-5 transition-colors duration-300 group-hover:fill-white group-hover:stroke-red" />
               </button>
               <p>{cart}</p>
               <button
                 onClick={() => increment(name)}
                 aria-label="Add to Cart"
-                className="group flex h-full items-center justify-center px-[12px]"
+                className="group flex h-full items-center justify-center px-3"
               >
-                <LuPlusCircle className="h-[20px] w-[20px] transition-colors group-hover:fill-white group-hover:stroke-red" />
+                <LuPlusCircle className="h-5 w-5 transition-colors duration-300 group-hover:fill-white group-hover:stroke-red" />
               </button>
             </div>
           )}

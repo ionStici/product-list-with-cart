@@ -1,6 +1,6 @@
-import Cart from "./Components/Cart";
-import Desserts from "./Components/Desserts";
-import Layout from "./Components/Layout";
+import Cart from "./components/Cart";
+import Desserts from "./components/Desserts";
+import Layout from "./components/Layout";
 
 export default function App() {
   return (

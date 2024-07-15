@@ -5,9 +5,10 @@ export function useMediaQuery(feature, value) {
     window.matchMedia(`(${feature}: ${value})`).matches,
   );
 
+  const handleChange = (e) => setMatch(e.matches);
+
   useEffect(() => {
     const mediaQuery = window.matchMedia(`(${feature}: ${value})`);
-    const handleChange = (e) => setMatch(e.matches);
     mediaQuery.addEventListener("change", handleChange);
 
     return () => mediaQuery.removeEventListener("change", handleChange);
