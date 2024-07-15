@@ -14,35 +14,52 @@ export default function OrderModal() {
   }, []);
 
   return createPortal(
-    <div>
-      <div>
-        <ReactSVG src="images/icon-order-confirmed.svg" />
+    <div className="fixed inset-0 h-full overflow-scroll bg-rose_900/50 pt-[95px] backdrop-blur-sm">
+      <div className="rounded-t-[12px] bg-white px-6 pb-6 pt-10">
+        <ReactSVG className="pb-6" src="images/icon-order-confirmed.svg" />
 
-        <h2>Order Confirmed</h2>
-        <p>We hope you enjoy your food!</p>
+        <h2 className="pb-2 text-4xl font-bold leading-[45px]">
+          Order Confirmed
+        </h2>
+        <p className="font-base pb-8 text-rose_500">
+          We hope you enjoy your food!
+        </p>
 
-        <div>
-          {desserts.map(({ image, name, cart, price }, i) => {
-            return (
-              <div key={i}>
-                <div>
-                  <img src={image?.thumbnail} alt="" />
+        <div className="mb-8 rounded-lg bg-rose_50 p-6">
+          <div>
+            {desserts.map(({ image, name, cart, price }, i) => {
+              return (
+                <div
+                  className="mb-4 flex items-center border-b border-rose_100 pb-4 text-sm font-semibold last:mb-6 last:pb-6"
+                  key={i}
+                >
+                  <div className="mr-4 h-12 w-12 shrink-0">
+                    <img
+                      className="size-full rounded-[4px]"
+                      src={image?.thumbnail}
+                      alt=""
+                    />
+                  </div>
+
+                  <div className="mr-4">
+                    <p className="mb-2">{name}</p>
+                    <p className="space-x-2">
+                      <span className="text-red">{cart}x</span>
+                      <span className="font-normal text-rose_500">
+                        @${price}
+                      </span>
+                    </p>
+                  </div>
+
+                  <p className="ml-auto text-base">${cart * price}</p>
                 </div>
-                <div>
-                  <p>{name}</p>
-                  <p>
-                    <span>{cart}x</span>
-                    <span>@${price}</span>
-                  </p>
-                </div>
-                <p>${cart * price}</p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
 
-          <p>
-            <span>Order Total</span>
-            <span>$46.50</span>
+          <p className="flex items-center justify-between">
+            <span className="text-sm">Order Total</span>
+            <span className="text-2xl font-bold">$46.50</span>
           </p>
         </div>
 
