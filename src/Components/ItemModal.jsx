@@ -8,6 +8,8 @@ export default function ItemModal({ dessert }) {
           className="size-full rounded-[4px]"
           src={image?.thumbnail}
           alt={name}
+          width={48}
+          height={48}
         />
       </div>
 

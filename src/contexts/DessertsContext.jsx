@@ -3,10 +3,10 @@ import { createContext, useContext, useState } from "react";
 const DessertsContext = createContext();
 
 export default function DessertsProvider({ children }) {
-  const [desserts, setDessets] = useState(data);
+  const [desserts, setDesserts] = useState(data);
 
   const increment = (name) => {
-    setDessets((prev) => {
+    setDesserts((prev) => {
       return prev.map((dessert) => {
         return dessert?.name === name
           ? {
@@ -19,7 +19,7 @@ export default function DessertsProvider({ children }) {
   };
 
   const decrement = (name) => {
-    setDessets((prev) => {
+    setDesserts((prev) => {
       return prev.map((dessert) => {
         if (dessert.cart === 0) return dessert;
         return dessert?.name === name
@@ -33,7 +33,7 @@ export default function DessertsProvider({ children }) {
   };
 
   const removeDessertFromCart = (name) => {
-    setDessets((prev) => {
+    setDesserts((prev) => {
       return prev.map((dessert) => {
         return dessert.name === name
           ? {
@@ -50,7 +50,7 @@ export default function DessertsProvider({ children }) {
   };
 
   const clearCart = () => {
-    setDessets((prev) => {
+    setDesserts((prev) => {
       return prev.map((dessert) => ({ ...dessert, cart: 0 }));
     });
   };
