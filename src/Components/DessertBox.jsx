@@ -1,19 +1,21 @@
 import DessertButton from "./DessertButton";
-import { useMediaQuery } from "../hooks/useMediaQuery";
 import { motion, AnimatePresence } from "framer-motion";
+import { useMediaQueries } from "../contexts/MediaQueriesContext";
 
 export default function DessertBox({ dessert, variants }) {
   const { image, name, category, price, cart } = dessert;
-
-  const match768 = useMediaQuery("min-width", "768px");
-  const match1052 = useMediaQuery("min-width", "1052px");
+  const { match768, match1052 } = useMediaQueries();
 
   let src = image.mobile;
   if (match768) src = image.tablet;
   if (match1052) src = image.desktop;
 
   return (
-    <motion.div variants={variants} className="mb-6 md:mb-0">
+    <motion.div
+      variants={variants}
+      transition={{ type: "spring", stiffness: 250 }}
+      className="mb-6 md:mb-0"
+    >
       <div className="relative mb-[38px] max-h-60">
         <img
           src={src}

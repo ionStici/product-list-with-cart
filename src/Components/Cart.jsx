@@ -4,6 +4,7 @@ import Button from "../ui/Button";
 import { useDesserts } from "../contexts/DessertsContext";
 import { useState } from "react";
 import { ReactSVG } from "react-svg";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Cart() {
   const [cartIsOpen, setCartIsOpen] = useState(false);
@@ -20,7 +21,17 @@ export default function Cart() {
   }, 0);
 
   return (
-    <div className="mt-8 rounded-xl bg-white p-6 lg:mt-0 lg:self-start">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9, x: 50 }}
+      animate={{ opacity: 1, scale: 1, x: 0 }}
+      transition={{
+        layout: { delay: 0 },
+        delay: 0.75,
+        type: "spring",
+        stiffness: 250,
+      }}
+      className="mt-8 rounded-xl bg-white p-6 lg:mt-0 lg:self-start"
+    >
       <h1 className="mb-6 text-2xl font-bold text-red">
         Your Cart ({totalInCart})
       </h1>
@@ -61,6 +72,6 @@ export default function Cart() {
           {cartIsOpen && <OrderModal setCartIsOpen={setCartIsOpen} />}
         </>
       )}
-    </div>
+    </motion.div>
   );
 }

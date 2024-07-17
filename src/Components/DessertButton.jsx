@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function DessertButton({ name, cart }) {
   const { increment, decrement } = useDesserts();
-  const [plus, setPlus] = useState(null);
+  const [plus, setPlus] = useState(cart > 0 ? true : null);
 
   const handleIncrement = () => {
     setPlus(true);

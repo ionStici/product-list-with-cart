@@ -7,17 +7,24 @@ export default function Desserts() {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.055 } },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.75 },
-    visible: { opacity: 1, scale: [1.05, 1] },
+    hidden: { opacity: 0, scale: 1.1 },
+    visible: { opacity: 1, scale: 1 },
   };
 
   return (
     <div>
-      <h1 className="mb-8 text-4xl font-bold text-rose_900">Desserts</h1>
+      <motion.h1
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.75, type: "spring", stiffness: 250 }}
+        className="mb-8 text-4xl font-bold text-rose_900"
+      >
+        Desserts
+      </motion.h1>
       <motion.div
         variants={containerVariants}
         initial="hidden"
