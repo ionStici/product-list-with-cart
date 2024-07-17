@@ -1,12 +1,16 @@
 import { ReactSVG } from "react-svg";
 import { useDesserts } from "../contexts/DessertsContext";
+import { motion } from "framer-motion";
 
 export default function CartItem({ dessert }) {
   const { removeDessertFromCart } = useDesserts();
   const { name, cart, price } = dessert;
 
   return (
-    <div className="mb-4 flex items-center justify-between border-b border-rose_100 pb-4">
+    <motion.div
+      layout
+      className="mb-4 flex items-center justify-between border-b border-rose_100 pb-4"
+    >
       <div className="mr-3 font-semibold">
         <p className="mb-2">{name}</p>
         <p className="flex gap-2 text-rose_500">
@@ -26,6 +30,6 @@ export default function CartItem({ dessert }) {
           src="images/icon-remove-item.svg"
         />
       </button>
-    </div>
+    </motion.div>
   );
 }
