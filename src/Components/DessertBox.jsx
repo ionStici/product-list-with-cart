@@ -1,6 +1,6 @@
 import DessertButton from "./DessertButton";
-import { motion, AnimatePresence } from "framer-motion";
 import { useMediaQueries } from "../contexts/MediaQueriesContext";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function DessertBox({ dessert, variants }) {
   const { image, name, category, price, cart } = dessert;

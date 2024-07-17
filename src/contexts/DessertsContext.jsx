@@ -100,7 +100,7 @@ const data = [
     name: "Vanilla Bean Crème Brûlée",
     category: "Crème Brûlée",
     price: 7.0,
-    cart: 0,
+    cart: 4,
   },
   {
     image: {
@@ -124,7 +124,7 @@ const data = [
     name: "Classic Tiramisu",
     category: "Tiramisu",
     price: 5.5,
-    cart: 0,
+    cart: 1,
   },
   {
     image: {
@@ -184,6 +184,6 @@ const data = [
     name: "Vanilla Panna Cotta",
     category: "Panna Cotta",
     price: 6.5,
-    cart: 0,
+    cart: 2,
   },
 ];

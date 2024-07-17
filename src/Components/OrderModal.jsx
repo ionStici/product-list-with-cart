@@ -1,9 +1,9 @@
-import { useEffect } from "react";
-import { useDesserts } from "../contexts/DessertsContext";
-import { createPortal } from "react-dom";
-import { ReactSVG } from "react-svg";
 import Button from "../ui/Button";
 import ItemModal from "./ItemModal";
+import { useDesserts } from "../contexts/DessertsContext";
+import { useEffect } from "react";
+import { createPortal } from "react-dom";
+import { ReactSVG } from "react-svg";
 import { motion } from "framer-motion";
 
 export default function OrderModal({ setCartIsOpen }) {
@@ -36,7 +36,7 @@ export default function OrderModal({ setCartIsOpen }) {
       exit={{ opacity: 0 }}
       onClick={handleCloseModal}
       data-type="outside"
-      className="hide-scrollbar fixed inset-0 z-20 h-dvh place-content-center overflow-scroll bg-rose_900/50 backdrop-blur-sm md:px-[95px]"
+      className="fixed inset-0 z-20 h-dvh place-content-center overflow-scroll bg-rose_900/50 backdrop-blur-sm md:px-[95px]"
     >
       <div data-type="outside" aria-hidden="true" className="h-[95px] w-full" />
 

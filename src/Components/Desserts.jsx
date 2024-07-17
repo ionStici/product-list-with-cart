@@ -1,5 +1,5 @@
-import { useDesserts } from "../contexts/DessertsContext";
 import DessertBox from "./DessertBox";
+import { useDesserts } from "../contexts/DessertsContext";
 import { motion } from "framer-motion";
 
 export default function Desserts() {
