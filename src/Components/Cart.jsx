@@ -92,7 +92,9 @@ export default function Cart() {
 
               <Button onClick={() => setCartIsOpen(true)}>Confirm Order</Button>
 
-              {cartIsOpen && <OrderModal setCartIsOpen={setCartIsOpen} />}
+              <AnimatePresence>
+                {cartIsOpen && <OrderModal setCartIsOpen={setCartIsOpen} />}
+              </AnimatePresence>
             </motion.div>
           )}
         </AnimatePresence>

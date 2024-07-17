@@ -50,9 +50,11 @@ export default function DessertsProvider({ children }) {
   };
 
   const clearCart = () => {
-    setDesserts((prev) => {
-      return prev.map((dessert) => ({ ...dessert, cart: 0 }));
-    });
+    setTimeout(() => {
+      setDesserts((prev) => {
+        return prev.map((dessert) => ({ ...dessert, cart: 0 }));
+      });
+    }, 250);
   };
 
   return (
@@ -98,7 +100,7 @@ const data = [
     name: "Vanilla Bean Crème Brûlée",
     category: "Crème Brûlée",
     price: 7.0,
-    cart: 4,
+    cart: 0,
   },
   {
     image: {
@@ -122,7 +124,7 @@ const data = [
     name: "Classic Tiramisu",
     category: "Tiramisu",
     price: 5.5,
-    cart: 1,
+    cart: 0,
   },
   {
     image: {
@@ -182,6 +184,6 @@ const data = [
     name: "Vanilla Panna Cotta",
     category: "Panna Cotta",
     price: 6.5,
-    cart: 2,
+    cart: 0,
   },
 ];

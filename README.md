@@ -2,13 +2,15 @@
 
 This is a solution to the [Product list with cart challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-**This project marks my first venture into using Tailwind CSS, and it's been an exciting learning experience!**
+**This project marks my first venture into using Tailwind CSS and Framer Motion, and it's been an exciting learning experience!** Btw, I'm aware that the UI is over-animated, it was done on purpose.
 
-This project is a frontend solution to a product list with a shopping cart. It was built to practice and demonstrate skills in **React and Tailwind CSS**. The project is responsive and includes functionality to add items to the cart, view the cart summary, and confirm the order.
+This project is a frontend solution to a product list with a shopping cart. It was built to practice and demonstrate skills in **React, Tailwind CSS and Framer Motion**. The project is responsive and includes functionality to add items to the cart, view the cart summary, and confirm the order.
 
-See the [Live Demo](https://ionstici.github.io/product-list-with-cart-fem).
+- You can see the demo of the project here: [https://ionstici.github.io/product-list-with-cart-fem](https://ionstici.github.io/product-list-with-cart-fem).
 
-![](./public/images/preview.jpg)
+- The solution is published on [Frontend Mentor](https://www.frontendmentor.io/solutions/product-list-with-cart-Alfq6Q_r9K).
+
+![](./app-demo.gif)
 
 ## Features
 
