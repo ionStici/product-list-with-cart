@@ -21,11 +21,15 @@ export default function DessertButton({ name, cart }) {
     <>
       {cart === 0 && (
         <motion.button
+          whileFocus={{
+            scale: [1, 1.1, 1],
+            transition: { duration: 1, ease: "easeInOut", repeat: Infinity },
+          }}
           initial={{ scale: 0.9, y: -10 }}
           animate={{ scale: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 300 }}
           onClick={handleIncrement}
-          className="flex size-full items-center justify-center space-x-2 rounded-full border border-rose_400 bg-white text-sm font-semibold text-rose_900 transition-colors duration-300 hover:text-red"
+          className="flex size-full items-center justify-center space-x-2 rounded-full border border-rose_400 bg-white text-sm font-semibold text-rose_900 transition-colors duration-300 hover:text-red focus:outline-none focus:ring-1 focus:ring-inset focus:ring-red/75 focus:ring-offset-2"
         >
           <ReactSVG src="images/icon-add-to-cart.svg" />
           <span>Add to Cart</span>
@@ -44,9 +48,9 @@ export default function DessertButton({ name, cart }) {
             transition={{ duration: 0.2, type: "spring", stiffness: 500 }}
             onClick={handleDecrement}
             aria-label="Remove from Cart"
-            className="group flex h-full items-center justify-center px-3"
+            className="group flex h-full items-center justify-center rounded-full px-3 focus:outline-none"
           >
-            <LuMinusCircle className="h-5 w-5 transition-colors duration-300 group-hover:fill-white group-hover:stroke-red" />
+            <LuPlusCircle className="h-5 w-5 transition-colors duration-300 group-hover:fill-white group-hover:stroke-red group-focus:fill-white group-focus:stroke-red" />
           </motion.button>
 
           <AnimatePresence mode="wait">
@@ -66,9 +70,9 @@ export default function DessertButton({ name, cart }) {
             transition={{ duration: 0.2, type: "spring", stiffness: 500 }}
             onClick={handleIncrement}
             aria-label="Add to Cart"
-            className="group flex h-full items-center justify-center px-3"
+            className="group flex h-full items-center justify-center rounded-full px-3 focus:outline-none"
           >
-            <LuPlusCircle className="h-5 w-5 transition-colors duration-300 group-hover:fill-white group-hover:stroke-red" />
+            <LuPlusCircle className="h-5 w-5 transition-colors duration-300 group-hover:fill-white group-hover:stroke-red group-focus:fill-white group-focus:stroke-red" />
           </motion.button>
         </motion.div>
       )}

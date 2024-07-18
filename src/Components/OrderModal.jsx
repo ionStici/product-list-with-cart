@@ -1,5 +1,5 @@
 import Button from "../ui/Button";
-import ItemModal from "./ItemModal";
+import ModalItem from "./ModalItem";
 import { useDesserts } from "../contexts/DessertsContext";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
@@ -36,7 +36,7 @@ export default function OrderModal({ setCartIsOpen }) {
       exit={{ opacity: 0 }}
       onClick={handleCloseModal}
       data-type="outside"
-      className="fixed inset-0 z-20 h-dvh place-content-center overflow-scroll bg-rose_900/50 backdrop-blur-sm md:px-[95px]"
+      className="fixed inset-0 z-20 h-dvh place-content-center overflow-y-scroll bg-rose_900/50 backdrop-blur-sm md:px-[95px]"
     >
       <div data-type="outside" aria-hidden="true" className="h-[95px] w-full" />
 
@@ -54,6 +54,7 @@ export default function OrderModal({ setCartIsOpen }) {
         <h2 className="pb-2 text-4xl font-bold leading-[45px]">
           Order Confirmed
         </h2>
+
         <p className="font-base pb-8 text-rose_500">
           We hope you enjoy your food!
         </p>
@@ -61,7 +62,7 @@ export default function OrderModal({ setCartIsOpen }) {
         <div className="mb-8 rounded-lg bg-rose_50 p-6">
           <div>
             {desserts.map((dessert, i) => {
-              return <ItemModal key={i} dessert={dessert} />;
+              return <ModalItem key={i} dessert={dessert} />;
             })}
           </div>
 

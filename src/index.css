@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .no-scroll {
-    position: relative;
-    overflow: hidden;
-  }
+html {
+  scrollbar-gutter: stable;
+}
+
+.no-scroll {
+  position: relative;
+  overflow: hidden;
 }

@@ -23,7 +23,7 @@ export default function CartItem({ dessert }) {
       <button
         aria-label="Remove from Cart"
         onClick={() => removeDessertFromCart(name)}
-        className="group rounded-[50%] border border-rose_400 p-[3px] transition-colors duration-300 hover:border-rose_900"
+        className="group rounded-[50%] border border-rose_400 p-[3px] transition-colors duration-300 hover:border-rose_900 focus:outline-none focus:ring-2 focus:ring-red/75 focus:ring-offset-[3px]"
       >
         <ReactSVG
           className="text-rose_400 transition-colors duration-300 group-hover:text-rose_900"

@@ -5,6 +5,7 @@ import { useDesserts } from "../contexts/DessertsContext";
 import { useState } from "react";
 import { ReactSVG } from "react-svg";
 import { AnimatePresence, motion } from "framer-motion";
+import CartEmpty from "./CartEmpty";
 
 export default function Cart() {
   const [cartIsOpen, setCartIsOpen] = useState(false);
@@ -44,25 +45,7 @@ export default function Cart() {
         className="mt-8 rounded-xl bg-white p-6 pt-[80px] lg:mt-0 lg:self-start"
       >
         <AnimatePresence mode="wait">
-          {desserts.length === 0 && (
-            <motion.div
-              key="empty"
-              layout
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ x: 250, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="py-4 text-center"
-            >
-              <ReactSVG
-                className="mb-4 flex justify-center"
-                src="images/illustration-empty-cart.svg"
-              />
-              <p className="text-sm font-semibold text-rose_500">
-                Your added items will appear here
-              </p>
-            </motion.div>
-          )}
+          {desserts.length === 0 && <CartEmpty />}
 
           {desserts.length > 0 && (
             <motion.div

@@ -35,7 +35,7 @@ export default function DessertsProvider({ children }) {
   const removeDessertFromCart = (name) => {
     setDesserts((prev) => {
       return prev.map((dessert) => {
-        return dessert.name === name
+        return dessert?.name === name
           ? {
               ...dessert,
               cart: 0,

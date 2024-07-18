@@ -1,4 +1,4 @@
-export default function ItemModal({ dessert }) {
+export default function ModalItem({ dessert }) {
   const { image, name, cart, price } = dessert;
 
   return (
