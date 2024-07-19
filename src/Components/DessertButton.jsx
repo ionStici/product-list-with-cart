@@ -50,7 +50,7 @@ export default function DessertButton({ name, cart }) {
             aria-label="Remove from Cart"
             className="group flex h-full items-center justify-center rounded-full px-3 focus:outline-none"
           >
-            <LuPlusCircle className="h-5 w-5 transition-colors duration-300 group-hover:fill-white group-hover:stroke-red group-focus:fill-white group-focus:stroke-red" />
+            <LuMinusCircle className="h-5 w-5 transition-colors duration-300 group-hover:fill-white group-hover:stroke-red group-focus:fill-white group-focus:stroke-red" />
           </motion.button>
 
           <AnimatePresence mode="wait">
