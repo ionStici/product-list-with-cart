@@ -31,7 +31,10 @@ export default function DessertButton({ name, cart }) {
           onClick={handleIncrement}
           className="flex size-full items-center justify-center space-x-2 rounded-full border border-rose_400 bg-white text-sm font-semibold text-rose_900 transition-colors duration-300 hover:text-red focus:outline-none focus:ring-1 focus:ring-inset focus:ring-red/75 focus:ring-offset-2"
         >
-          <ReactSVG src="images/icon-add-to-cart.svg" />
+          <ReactSVG
+            src="images/icon-add-to-cart.svg"
+            beforeInjection={(svg) => svg.setAttribute("aria-label", "Cart")}
+          />
           <span>Add to Cart</span>
         </motion.button>
       )}

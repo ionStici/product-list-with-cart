@@ -66,7 +66,12 @@ export default function Cart() {
               </div>
 
               <div className="mb-6 flex h-[52px] items-center justify-center space-x-2 rounded-lg bg-rose_50 px-3">
-                <ReactSVG src="images/icon-carbon-neutral.svg" />
+                <ReactSVG
+                  src="images/icon-carbon-neutral.svg"
+                  beforeInjection={(svg) => {
+                    svg.setAttribute("aria-label", "Green Tree");
+                  }}
+                />
                 <p className="text-center text-sm">
                   This is a{" "}
                   <span className="font-semibold">carbon-neutral</span> delivery

@@ -28,6 +28,9 @@ export default function CartItem({ dessert }) {
         <ReactSVG
           className="text-rose_400 transition-colors duration-300 group-hover:text-rose_900"
           src="images/icon-remove-item.svg"
+          beforeInjection={(svg) => {
+            svg.setAttribute("aria-label", "Remove Item");
+          }}
         />
       </button>
     </motion.div>
