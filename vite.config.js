@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/product-list-with-cart-fem/",
+  base: "/product-list-with-cart/",
 });
